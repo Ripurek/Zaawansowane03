@@ -6,3 +6,4 @@ Release/
 *.obj
 *.pdb
 *.user
+run.bat
