@@ -1,14 +1,52 @@
+/**
+ * @file MergeSort.h
+ * @brief Szablonowa klasa realizująca algorytm sortowania przez scalanie (Merge Sort).
+ */
+
+
 #pragma once
 #include <vector>
+
+/**
+ * @class MergeSort
+ * @brief Uniwersalna klasa sortująca oparta na paradygmacie dziel i zwyciężaj.
+ * @tparam T Typ sortowanych elementów (musi wspierać operator porównania <=).
+ */
+
 
 template <typename T>
 class MergeSort {
 public:
+
+/**
+     * @brief Sortuje rosnąco podany wektor elementów.
+     * @param data Wektor danych wejściowych modyfikowany w miejscu.
+     */
+
     void sort(std::vector<T>& arr);
     void sort(T* arr, int size);
 
 private:
+
+/**
+     * @brief Rekurencyjnie dzieli zakres tablicy i scala posortowane połowy.
+     * @param data Wektor przetwarzanych danych.
+     * @param left Indeks początkowy zakresu.
+     * @param right Indeks końcowy zakresu.
+     */
+
     void mergeSort(std::vector<T>& arr, int left, int right);
+
+
+/**
+     * @brief Scala dwa sąsiednie, posortowane podzakresy w jeden uporządkowany fragment.
+     * @param data Wektor przetwarzanych danych.
+     * @param left Indeks początku lewej podtablicy.
+     * @param mid Indeks końca lewej podtablicy.
+     * @param right Indeks końca prawej podtablicy.
+      */
+
+
     void merge(std::vector<T>& arr, int left, int mid, int right);
 };
 
