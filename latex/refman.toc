@@ -1,0 +1,20 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {polish}{}\relax 
+\contentsline {chapter}{\numberline {1}Indeks klas}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Lista klas}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Indeks plików}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Lista plików}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Dokumentacja klas}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dokumentacja szablonu klasy Merge\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sort$<$ T $>$}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Opis szczegółowy}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Dokumentacja funkcji składowych}{6}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}sort()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{6}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}sort()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{6}{subsubsection.3.1.2.2}%
+\contentsline {chapter}{\numberline {4}Dokumentacja plików}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dokumentacja pliku main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Dokumentacja funkcji}{7}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}main()}{7}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}printArray()}{7}{subsubsection.4.1.1.2}%
+\contentsline {section}{\numberline {4.2}Dokumentacja pliku Merge\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sort.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{7}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Opis szczegółowy}{8}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Merge\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sort.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{8}{section.4.3}%
