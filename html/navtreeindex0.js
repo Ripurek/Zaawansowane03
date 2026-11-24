@@ -1,0 +1,20 @@
+var NAVTREEINDEX0 =
+{
+"_merge_sort_8h.html":[1,0,1],
+"_merge_sort_8h_source.html":[1,0,1],
+"annotated.html":[0,0],
+"class_merge_sort.html":[0,0,0],
+"class_merge_sort.html#a1cd2234154a11c71041d7df6be1885cf":[0,0,0,1],
+"class_merge_sort.html#a84c5f1b454f1e475454b8c5c67a799d9":[0,0,0,0],
+"classes.html":[0,1],
+"files.html":[1,0],
+"functions.html":[0,2,0],
+"functions_func.html":[0,2,1],
+"globals.html":[1,1,0],
+"globals_func.html":[1,1,1],
+"index.html":[],
+"main_8cpp.html":[1,0,0],
+"main_8cpp.html#a865a610a29059ca03230d2540641474f":[1,0,0,1],
+"main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[1,0,0,0],
+"pages.html":[]
+};

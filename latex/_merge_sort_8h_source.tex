@@ -1,0 +1,109 @@
+\doxysection{Merge\+Sort.\+h}
+\hypertarget{_merge_sort_8h_source}{}\label{_merge_sort_8h_source}\doxymbox{\hyperlink{_merge_sort_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_merge_sort}{MergeSort}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_merge_sort_a84c5f1b454f1e475454b8c5c67a799d9}{sort}}(std::vector<T>\&\ arr);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_merge_sort_a84c5f1b454f1e475454b8c5c67a799d9}{sort}}(T*\ arr,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ mergeSort(std::vector<T>\&\ arr,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ right);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ merge(std::vector<T>\&\ arr,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ mid,\ \textcolor{keywordtype}{int}\ right);}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ -\/-\/-\/\ Definicje\ metod\ poniżej\ deklaracji\ klasy\ -\/-\/-\/}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_merge_sort_a84c5f1b454f1e475454b8c5c67a799d9}{MergeSort<T>::sort}}(std::vector<T>\&\ arr)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (arr.size()\ <=\ 1)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Obsługa\ pustej\ i\ 1-\/elementowej\ tablicy\ bez\ rzucania\ wyjątku}}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ mergeSort(arr,\ 0,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(arr.size())\ -\/\ 1);}
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_merge_sort_a84c5f1b454f1e475454b8c5c67a799d9}{MergeSort<T>::sort}}(T*\ arr,\ \textcolor{keywordtype}{int}\ size)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (arr\ ==\ \textcolor{keyword}{nullptr}\ ||\ size\ <=\ 1)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ std::vector<T>\ temp(arr,\ arr\ +\ size);}
+\DoxyCodeLine{00069\ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_a84c5f1b454f1e475454b8c5c67a799d9}{sort}}(temp);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ ++i)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ arr[i]\ =\ temp[i];}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ MergeSort<T>::mergeSort(std::vector<T>\&\ arr,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ right)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ >=\ right)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ mid\ =\ left\ +\ (right\ -\/\ left)\ /\ 2;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ mergeSort(arr,\ left,\ mid);}
+\DoxyCodeLine{00084\ \ \ \ \ mergeSort(arr,\ mid\ +\ 1,\ right);}
+\DoxyCodeLine{00085\ \ \ \ \ merge(arr,\ left,\ mid,\ right);}
+\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ MergeSort<T>::merge(std::vector<T>\&\ arr,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ mid,\ \textcolor{keywordtype}{int}\ right)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ n1\ =\ mid\ -\/\ left\ +\ 1;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{int}\ n2\ =\ right\ -\/\ mid;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ std::vector<T>\ leftArr(n1);}
+\DoxyCodeLine{00094\ \ \ \ \ std::vector<T>\ rightArr(n2);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n1;\ ++i)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ leftArr[i]\ =\ arr[left\ +\ i];}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ n2;\ ++j)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ rightArr[j]\ =\ arr[mid\ +\ 1\ +\ j];}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ left;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n1\ \&\&\ j\ <\ n2)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (leftArr[i]\ <=\ rightArr[j])\ \{\ \textcolor{comment}{//\ <=\ zachowuje\ stabilność\ dla\ duplikatów}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ arr[k]\ =\ leftArr[i];}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ ++i;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ arr[k]\ =\ rightArr[j];}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ ++j;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ ++k;}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n1)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ arr[k]\ =\ leftArr[i];}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ ++i;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ ++k;}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ <\ n2)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ arr[k]\ =\ rightArr[j];}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ ++j;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ ++k;}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \}}
+
+\end{DoxyCode}
